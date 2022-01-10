@@ -6,7 +6,7 @@ class User {
     protected $nomeAcquirente;
     protected $prodotto;
     protected $prezzo;
-    protected $livelloCarta;
+    private $livelloCarta;
    
 
     // COSTRUTTORE 
@@ -31,7 +31,7 @@ class User {
 
 
      protected function SetLivelloCarta() {
-     $this->prezzo =  $this->livelloCarta = 3 ? 250 : 0;
+    $this->prezzo = $this->livelloCarta = 3 ? 250 : 0;
     }
 
     public function GetLivelloCarta() {

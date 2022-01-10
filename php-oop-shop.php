@@ -1,5 +1,7 @@
 <?php 
 require_once __DIR__ . '/classes/utente.php';
+require_once __DIR__ . '/classes/nuovoUtente.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -18,8 +20,8 @@ require_once __DIR__ . '/classes/utente.php';
     <main>
          <section>
              <h2>Prodotto in vendita </h2>       
-             <div> Xbox serie s </div>
-             <div>il suo prezzo di listino è 300€</div>
+             <h3> Xbox serie s </h3>
+             <h3>il suo prezzo di listino è 300€</h3>
          </section>
 
         <section>
@@ -32,6 +34,17 @@ require_once __DIR__ . '/classes/utente.php';
             
             <h5> hai acquistato il prodotto: <?php echo $user1->getProdotto(); ?> <h5>
             <h5>Grazie alla tua carta livello 3 il tuo costo è di: <?php echo $user1->GetLivelloCarta(); ?>€ <h5>
+        </section>
+
+        <section>
+            <?php 
+            $nuovoUtente = new NuovoUtente('Fabio De Luca', 'Xbox Serie S', 300 ); 
+           /*  var_dump($nuovoUtente); */
+            ?>
+            <hr>
+            <h5> Nome utente dell'avvenuto acquisto: <?php echo $nuovoUtente->getNome(); ?>  </h5>
+            <h5>Hai acquistato il prodotto:  <?php echo $nuovoUtente->getProdotto(); ?> </h5>
+            <h5> Essendo un nuovo utente il tuo costo è di: <?php echo $nuovoUtente->getScontoNuovoUtente(); ?>€</h5>
         </section>
     </main>
 </body>
